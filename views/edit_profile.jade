@@ -1,0 +1,207 @@
+include mixins
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Small Business - Start Bootstrap Template
+    link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/small-business.css', rel='stylesheet')
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container
+        a.navbar-brand(href='#') Start Bootstrap
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item
+              a.nav-link(href='#') home
+            li.nav-item.active
+              a.nav-link(href='#')
+                | profile
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='#') Start Game
+            li.nav-item
+              a.nav-link(href='#') Design Game
+            li.nav-item
+              a.nav-link(href='#') Users
+    .container
+      .row
+        .col-sm-10
+          h1 User name
+      .row
+        .col-sm-3
+          .text-center
+            img.avatar.img-circle.img-thumbnail(src='http://ssl.gstatic.com/accounts/ui/avatar_2x.png', alt='avatar')
+            h6 Upload a different photo...
+            input.text-center.center-block.file-upload(type='file')
+          br
+          .panel.panel-default
+            .panel-heading
+              | Website 
+              i.fa.fa-link.fa-1x
+            .panel-body
+              a(href='http://bootnipets.com') bootnipets.com
+          ul.list-group
+            li.list-group-item.text-muted
+              | Activity 
+              i.fa.fa-dashboard.fa-1x
+            li.list-group-item.text-right
+              span.pull-left
+                strong Shares
+              |  125
+            li.list-group-item.text-right
+              span.pull-left
+                strong Likes
+              |  13
+            li.list-group-item.text-right
+              span.pull-left
+                strong Posts
+              |  37
+            li.list-group-item.text-right
+              span.pull-left
+                strong Followers
+              |  78
+          .panel.panel-default
+            .panel-heading Social Media
+            .panel-body
+              i.fa.fa-facebook.fa-2x
+              i.fa.fa-github.fa-2x
+              i.fa.fa-twitter.fa-2x
+              i.fa.fa-pinterest.fa-2x
+              i.fa.fa-google-plus.fa-2x
+        .col-sm-9
+          .tab-content
+            #home.tab-pane.active
+              hr
+              form#registrationForm.form(action='/edit_profile', method='post')
+                +edit_profile_form_input('name', 'Name', user.name)
+                +edit_profile_form_input('family_name', 'Family Name', user.family_name)
+                +edit_profile_form_input('email', 'Email', user.email)
+                +edit_profile_form_input('username', 'Username', user.username)
+                .form-group
+                  .col-xs-6
+                    label(for='password')
+                      h4 Password
+                    input#password.form-control(type='password', name='password', placeholder='password', title='enter your password.')
+                .form-group
+                  .col-xs-12
+                    br
+                    button.btn.btn-lg.btn-success(type='submit')
+                      i.glyphicon.glyphicon-ok-sign
+                      |  Save
+                    button.btn.btn-lg(type='reset')
+                      i.glyphicon.glyphicon-repeat
+                      |  Reset
+              hr
+            #messages.tab-pane
+              h2
+              hr
+              form#registrationForm.form(action='##', method='post')
+                .form-group
+                  .col-xs-6
+                    label(for='first_name')
+                      h4 First name
+                    input#first_name.form-control(type='text', name='first_name', placeholder='first name', title='enter your first name if any.')
+                .form-group
+                  .col-xs-6
+                    label(for='last_name')
+                      h4 Last name
+                    input#last_name.form-control(type='text', name='last_name', placeholder='last name', title='enter your last name if any.')
+                .form-group
+                  .col-xs-6
+                    label(for='phone')
+                      h4 Phone
+                    input#phone.form-control(type='text', name='phone', placeholder='enter phone', title='enter your phone number if any.')
+                .form-group
+                  .col-xs-6
+                    label(for='mobile')
+                      h4 Mobile
+                    input#mobile.form-control(type='text', name='mobile', placeholder='enter mobile number', title='enter your mobile number if any.')
+                .form-group
+                  .col-xs-6
+                    label(for='email')
+                      h4 Email
+                    input#email.form-control(type='email', name='email', placeholder='you@email.com', title='enter your email.')
+                .form-group
+                  .col-xs-6
+                    label(for='email')
+                      h4 Location
+                    input#location.form-control(type='email', placeholder='somewhere', title='enter a location')
+                .form-group
+                  .col-xs-6
+                    label(for='password')
+                      h4 Password
+                    input#password.form-control(type='password', name='password', placeholder='password', title='enter your password.')
+                .form-group
+                  .col-xs-6
+                    label(for='password2')
+                      h4 Verify
+                    input#password2.form-control(type='password', name='password2', placeholder='password2', title='enter your password2.')
+                .form-group
+                  .col-xs-12
+                    br
+                    button.btn.btn-lg.btn-success(type='submit')
+                      i.glyphicon.glyphicon-ok-sign
+                      |  Save
+                    button.btn.btn-lg(type='reset')
+                      i.glyphicon.glyphicon-repeat
+                      |  Reset
+            #settings.tab-pane
+              hr
+              form#registrationForm.form(action='##', method='post')
+                .form-group
+                  .col-xs-6
+                    label(for='first_name')
+                      h4 First name
+                    input#first_name.form-control(type='text', name='first_name', placeholder='first name', title='enter your first name if any.')
+                .form-group
+                  .col-xs-6
+                    label(for='last_name')
+                      h4 Last name
+                    input#last_name.form-control(type='text', name='last_name', placeholder='last name', title='enter your last name if any.')
+                .form-group
+                  .col-xs-6
+                    label(for='phone')
+                      h4 Phone
+                    input#phone.form-control(type='text', name='phone', placeholder='enter phone', title='enter your phone number if any.')
+                .form-group
+                  .col-xs-6
+                    label(for='mobile')
+                      h4 Mobile
+                    input#mobile.form-control(type='text', name='mobile', placeholder='enter mobile number', title='enter your mobile number if any.')
+                .form-group
+                  .col-xs-6
+                    label(for='email')
+                      h4 Email
+                    input#email.form-control(type='email', name='email', placeholder='you@email.com', title='enter your email.')
+                .form-group
+                  .col-xs-6
+                    label(for='email')
+                      h4 Location
+                    input#location.form-control(type='email', placeholder='somewhere', title='enter a location')
+                .form-group
+                  .col-xs-6
+                    label(for='password')
+                      h4 Password
+                    input#password.form-control(type='password', name='password', placeholder='password', title='enter your password.')
+                .form-group
+                  .col-xs-6
+                    label(for='password2')
+                      h4 Verify
+                    input#password2.form-control(type='password', name='password2', placeholder='password2', title='enter your password2.')
+                .form-group
+                  .col-xs-12
+                    br
+                    button.btn.btn-lg.btn-success.pull-right(type='submit')
+                      i.glyphicon.glyphicon-ok-sign
+                      |                     Save
+    footer.py-5.bg-dark
+      .container
+        p.m-0.text-center.text-white Copyright © Your Website 2017
+    script(src='vendor/jquery/jquery.min.js')
+    script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')

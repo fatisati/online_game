@@ -1,0 +1,39 @@
+include mixins
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title game finish
+        link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+        link(href='css/small-business.css', rel='stylesheet')
+        link(href='css/login.css', rel='stylesheet')
+        link(href='css/game_finish.css', rel='stylesheet')
+
+    body
+        +navbar('game finished')
+        .container
+            form(action = '/comment_game', method = 'post')
+                .form-group
+                    label(for='comment')
+                        h1  Comment for game:
+                    textarea#comment.form-control(rows='5', name = 'comment')
+                    br
+                    button.btn.btn-primary(type='submit') Submit
+            br
+            br
+            form(action= '/user_comment', method = 'post')
+                .form-group
+                    label(for='comment')
+                        h1  Comment for opponent:
+                    textarea#comment.form-control(rows='5')
+                    br
+                    button.btn.btn-primary(type='submit') Submit
+
+        footer.py-5.bg-dark
+            .container
+                p.m-0.text-center.text-white Copyright © Your Website 2017
+        script(src='vendor/jquery/jquery.min.js')
+        script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')

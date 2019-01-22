@@ -1,0 +1,95 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title Small Business - Start Bootstrap Template
+		// Bootstrap core CSS
+		link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+		// Custom styles for this template
+		link(href='css/small-business.css', rel='stylesheet')
+	body
+		// Navigation
+		nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+			.container
+				a.navbar-brand(href='#') Start Bootstrap
+				button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+					span.navbar-toggler-icon
+				#navbarResponsive.collapse.navbar-collapse
+					ul.navbar-nav.ml-auto
+						li.nav-item.active
+							a.nav-link(href='#')
+								| Home
+								span.sr-only (current)
+						li.nav-item
+							a.nav-link(href='#') user review
+						li.nav-item
+							a.nav-link(href='#') game review
+						li.nav-item
+							a.nav-link(href='#') signout
+		// Page Content
+		.container
+			// Heading Row
+			.row.my-4
+				.col-lg-8
+					#carouselExampleControls.carousel.slide(data-ride='carousel')
+						.carousel-inner
+							.carousel-item.active
+								img.d-block.w-100(src='./img/900x400.png', alt='First slide')
+							.carousel-item
+								img.d-block.w-100(src='./img/900x400.png', alt='Second slide')
+							.carousel-item
+								img.d-block.w-100(src='./img/900x400.png', alt='Third slide')
+						a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+							span.carousel-control-prev-icon(aria-hidden='true')
+							span.sr-only Previous
+						a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+							span.carousel-control-next-icon(aria-hidden='true')
+							span.sr-only Next
+				// /.col-lg-8
+				.col-lg-4
+					.container
+						.row
+							.panel.panel-default.user_panel
+								.panel-heading
+									h3.panel-title User List
+								.panel-body
+									.table-container
+										table.table-users.table(border='0')
+											tbody
+												tr
+													td(width='10', align='center')
+														i.fa.fa-2x.fa-user.fw
+													td
+														| John Smith
+														br
+														i.fa.fa-envelope
+													td
+														| Builder Admin
+													td(align='center')
+														| Last Login: 6/14/2017
+														br
+														small.text-muted 2 days ago
+												tr
+													td(width='10')
+														img.pull-left.img-circle.nav-user-photo(width='50', src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxhcCYW4QDWMOjOuUTxOd50KcJvK-rop9qE9zRltSbVS_bO-cfWA')
+													td
+														| Herbert Hoover
+														br
+														i.fa.fa-envelope
+													td
+														| Builder Sales Agent
+													td(align='center')
+														| Last Login: 6/10/2017
+														br
+														small.text-muted 5 days ago					// /.col-md-4
+					// /.container
+					// Footer
+					footer.py-5.bg-dark
+						
+						// /.container
+						// Bootstrap core JavaScript
+						script(src='vendor/jquery/jquery.min.js')
+						script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')

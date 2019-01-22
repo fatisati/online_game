@@ -1,0 +1,110 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title Small Business - Start Bootstrap Template
+		link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+		link(href='css/small-business.css', rel='stylesheet')
+		link(href='css/user-home.css', rel='stylesheet')
+	body
+		nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+			.container
+				a.navbar-brand(href='#') Start Bootstrap
+				button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+					span.navbar-toggler-icon
+				#navbarResponsive.collapse.navbar-collapse
+					ul.navbar-nav.ml-auto
+						li.nav-item.active
+							a.nav-link(href='#')
+								| Home
+								span.sr-only (current)
+						li.nav-item
+							a.nav-link(href='#') Games
+						li.nav-item
+							a.nav-link(href='#') Services
+						li.nav-item
+							a.nav-link(href='#') Contact
+		.container
+			.row.my-4
+				.col-lg-8
+					.row.profile
+						.col
+							.profile-sidebar
+								.profile-userpic
+									img.img-responsive(src='http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg', alt='')
+								.profile-usertitle
+									.profile-usertitle-name
+										| Marcus Doe
+									.profile-usertitle-job
+										| Developer
+								.profile-userbuttons
+									button.btn.btn-success.btn-sm(type='button') Follow
+									button.btn.btn-danger.btn-sm(type='button') Message
+								.profile-usermenu
+									ul.nav
+										li.active
+											a(href='#')
+												i.glyphicon.glyphicon-home
+												|                       Overview
+										li
+											a(href='#')
+												i.glyphicon.glyphicon-user
+												|                       Account Settings
+										li
+											a(href='#', target='_blank')
+												i.glyphicon.glyphicon-ok
+												|                       Tasks
+										li
+											a(href='#')
+												i.glyphicon.glyphicon-flag
+												|                       Help
+				.col-lg-4
+					.container
+						.row
+							.panel.panel-default.user_panel
+								.panel-heading
+									h3.panel-title User List
+								.panel-body
+									.table-container
+										table.table-users.table(border='0')
+											tbody
+												tr
+													td(width='10', align='center')
+														i.fa.fa-2x.fa-user.fw
+													td
+														| John Smith
+														br
+														i.fa.fa-envelope
+													td
+														| Builder Admin
+													td(align='center')
+														| Last Login: 6/14/2017
+														br
+														small.text-muted 2 days ago
+												tr
+													td(width='10')
+														img.pull-left.img-circle.nav-user-photo(width='50', src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxhcCYW4QDWMOjOuUTxOd50KcJvK-rop9qE9zRltSbVS_bO-cfWA')
+													td
+														| Herbert Hoover
+														br
+														i.fa.fa-envelope
+													td
+														| Builder Sales Agent
+													td(align='center')
+														| Last Login: 6/10/2017
+														br
+														small.text-muted 5 days ago
+			.row
+				.col-md-4.mb-4
+					.card.h-100
+						.card-body
+							h2.card-title create game
+							p.card-text you can create new games here.
+						.card-footer
+							a.btn.btn-primary(href='#') go
+				
+		script(src='vendor/jquery/jquery.min.js')
+		script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')

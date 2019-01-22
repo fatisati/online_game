@@ -1,0 +1,57 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title game
+    meta(name='description', content='The HTML5 Herald')
+    meta(name='author', content='SitePoint')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
+    link(rel='stylesheet', href='css/styles.css')
+  body
+    .game
+      .my-btn
+        a(href='javascript:newGame();')
+          i.fas.fa-plus-circle
+        label new game
+      .my-btn.roll-dice
+        a(href='javascript:rollDice('+ game.hold_num +',' + game.max_dice_roll +');')
+          i.fas.fa-sync-alt
+        label roll dice
+      .my-btn.hold
+        a(href="javascript:hold(" + game.maxScore + ");")
+          i.fas.fa-arrow-alt-circle-down
+        label hold
+      .my-btn.score
+        input#score(placeholder='input score', type='number')
+      .dice
+        img#dice_img(src='', width='10%')
+      .dice.dice2
+        img#dice_img2(src='', width='10%')
+      #player0.player.player1.current_player
+        p#p0
+          | player 0 
+          i.fas.fa-circle(style='font-size : 10px')
+        p#score0 0
+        .current
+          label current
+          br
+          label#current0 0
+        br
+        br
+        br
+      #player1.player.player2
+        p#p1
+          | player 1
+          i.fas.fa-circle(style='font-size : 10px')
+        p#score1 0
+        .current
+          label current
+          br
+          label#current1 0
+        br
+        br
+        br
+        a(href='/game_finish') finish
+
+    script(src='./js/scripts.js')

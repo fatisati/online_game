@@ -1,0 +1,72 @@
+include mixins
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        title profile
+        link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+        link(href='/css/small-business.css', rel='stylesheet')
+        link(href='/css/profile.css', rel='stylesheet')
+    body
+        +navbar('profile')
+        .container
+            .container.emp-profile
+                form(action='/edit_profile', method='get')
+                    .row
+                        .col-md-4
+                            .profile-img
+                                img(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog', alt='')
+                                .file.btn.btn-lg.btn-primary
+                                    | Change Photo
+                                    input(type='file', name='file')
+                        .col-md-6
+                            .profile-head 
+                                h5
+                                    | #{user.name + ' ' + user.family_name }
+                                p.proile-rating mean score:
+                                    | #{user.mean_score}
+
+                                ul#myTab.nav.nav-tabs(role='tablist')
+                                    li.nav-item
+                                        a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') About
+                                    l
+                        .col-md-2
+                            input.profile-edit-btn(type='submit', name='btnAddMore', value='Edit Profile')
+                    .row
+                        .col-md-4
+                            .profile-work
+                                p played games
+                                a(href='') 12
+                                br
+
+                                p mean score:
+                                a(href='') #{user.mean_score}
+                                br
+                                
+                        .col-md-8
+                            #myTabContent.tab-content.profile-tab
+                                #home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+                                    .row
+                                        .col-md-6
+                                            label User Id
+                                        .col-md-6
+                                            p #{user.username}
+                                    .row
+                                        .col-md-6
+                                            label Name
+                                        .col-md-6
+                                            p #{user.name + ' '+ user.family_name}
+                                    .row
+                                        .col-md-6
+                                            label Email
+                                        .col-md-6
+                                            p #{user.email}
+
+        footer.py-5.bg-dark
+            .container
+                p.m-0.text-center.text-white Copyright © Your Website 2017
+        script(src='vendor/jquery/jquery.min.js')
+        script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')

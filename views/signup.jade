@@ -1,0 +1,54 @@
+include mixins
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title externalStyle.html
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+  body
+    form(action='/signup', method='POST', style='border:1px solid #ccc')
+      .container
+        h1 Sign Up
+        p Please fill in this form to create an account.
+        hr
+        +form_input('Name','name', 'true')
+        +form_input('Family Name','family_name', 'true')
+
+
+        label.col-2.col-form-label(for='example-date-input')
+          b Birth Date
+          br
+        br
+        input.form(type='date', value='2011-08-19')
+        br
+        br
+        
+        label(for='gender')
+          b Gender
+          br
+        br
+        select.form-control(name = 'gender')
+          option male
+          option female
+        br 
+        br
+        label(for='email')
+          b Email
+        input(type='text', placeholder='Enter Email', name='email', required='')
+        +form_input('Username','username', 'true')
+        label(for='psw')
+          b Password
+        input(type='password', placeholder='Enter Password', name='psw', required='')
+        label(for='psw-repeat')
+          b Repeat Password
+        input(type='password', placeholder='Repeat Password', name='psw-repeat', required='')
+        label
+          input(type='checkbox', checked='checked', name='remember', style='margin-bottom:15px')
+          |  Remember me
+        p
+          | By creating an account you agree to our 
+          a(href='#', style='color:dodgerblue') Terms & Privacy
+          | .
+        .clearfix
+          button.cancelbtn(type='button') Cancel
+          button.signupbtn(type='submit') Sign Up

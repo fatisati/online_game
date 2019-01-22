@@ -1,0 +1,39 @@
+include mixins
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title Small Business - Start Bootstrap Template
+		link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+		link(href='css/small-business.css', rel='stylesheet')
+	body
+		+navbar('Create Game')
+		.container
+			br
+			form(action = '/create_game', method = 'post')
+				.form-group
+					label max score:
+					input.form-control(type='number', placeholder='enter max score', name = 'max_score')
+				.form-group
+					label hold number:
+					input.form-control(type='number', name = 'hold_num')
+				.form-group
+					label number of dices:
+					select.form-control(name = 'dice_num')
+						option 1
+						option 2
+						option 4
+				.form-group
+					label number of dice roll:
+					input.form-control(type='number', name = 'max_dice_roll')
+					small#emailHelp.form-text.text-muted enter how many times can a player roll a dice.
+				button.btn.btn-primary(type='submit') create game
+			br
+		footer.py-5.bg-dark
+			.container
+				p.m-0.text-center.text-white Copyright © Your Website 2017
+		script(src='vendor/jquery/jquery.min.js')
+		script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')

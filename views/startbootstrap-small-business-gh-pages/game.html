@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+      <title>game</title>
+      <meta name="description" content="The HTML5 Herald">
+      <meta name="author" content="SitePoint">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+            crossorigin="anonymous">
+      <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+      <!-- <script src="js/scripts.js"></script> -->
+      <div class="game">
+            <div class="my-btn">
+                  <!-- <button>+</button> -->
+                  <a href="javascript:newGame();">
+                        <i class="fas fa-plus-circle"></i>
+                  </a>
+                  <label>new game</label>
+            </div>
+
+            <div class="my-btn roll-dice">
+                  <a href="javascript:rollDice();">
+                        <i class="fas fa-sync-alt"></i>
+                  </a>
+                  <label>roll dice</label>
+            </div>
+
+            <div class="my-btn hold">
+                  <a href="javascript:hold();">
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                  </a>
+                  <label>hold</label>
+            </div>
+
+            <div class="my-btn score">
+                  <input placeholder="input score" id='score' type="number">
+            </div>
+            <div class="dice">
+                  <img src="" width="10%" id='dice_img'>
+            </div>
+            <div class="dice dice2">
+                  <img src="" width="10%" id='dice_img2'>
+            </div>
+            <div class="player player1 current_player" id='player0'>
+                  <p id='p0'>player 0 <i class="fas fa-circle" style="font-size : 10px"></i></p>
+                  <p id='score0'>0</p>
+
+                  <div class="current">
+                        <label>current</label>
+                        <br>
+                        <label id='current0'>0</label>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+            </div>
+            <div class="player player2" id='player1'>
+                  <p id='p1'>player 1<i class="fas fa-circle" style="font-size : 10px"></i></p>
+                  <p id='score1'>0</p>
+                  <div class="current">
+                        <label>current</label>
+                        <br>
+                        <label id='current1'>0</label>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+            </div>
+      </div>
+      <script src="./js/scripts.js"></script>
+</body>
+
+</html>

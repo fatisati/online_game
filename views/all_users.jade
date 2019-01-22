@@ -1,0 +1,54 @@
+include mixins
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title all users
+    link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='css/small-business.css', rel='stylesheet')
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container
+        a.navbar-brand(href='#') all users
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item.active
+              a.nav-link(href='#')
+                | all users
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='#') Profile
+            li.nav-item
+              a.nav-link(href='#') Start Game
+            li.nav-item
+              a.nav-link(href='#') Design Game
+            li.nav-item
+              a.nav-link(href='#') Users
+    .container
+      br
+      .row.my-4
+        .col-lg-4
+          #v-pills-tab.nav.flex-column.nav-pills(role='tablist', aria-orientation='vertical')
+            h2 filters
+            a#v-pills-home-tab.nav-link.active(data-toggle='pill', href='#v-pills-home', role='tab', aria-controls='v-pills-home', aria-selected='true') time of design
+            a#v-pills-profile-tab.nav-link(data-toggle='pill', href='#v-pills-profile', role='tab', aria-controls='v-pills-profile', aria-selected='false') score
+            a#v-pills-messages-tab.nav-link(data-toggle='pill', href='#v-pills-messages', role='tab', aria-controls='v-pills-messages', aria-selected='false') game numbers
+            a#v-pills-settings-tab.nav-link(data-toggle='pill', href='#v-pills-settings', role='tab', aria-controls='v-pills-settings', aria-selected='false') game numbers per day
+          #v-pills-tabContent.tab-content
+            #v-pills-home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='v-pills-home-tab') ...
+            #v-pills-profile.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-profile-tab') ...
+            #v-pills-messages.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-messages-tab') ...
+            #v-pills-settings.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-settings-tab') ...
+        .col-lg-8
+          .row
+            +show_users(users)
+    footer.py-5.bg-dark
+      .container
+        p.m-0.text-center.text-white Copyright © Your Website 2017
+    script(src='vendor/jquery/jquery.min.js')
+    script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')

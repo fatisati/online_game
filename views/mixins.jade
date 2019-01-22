@@ -1,0 +1,78 @@
+mixin game_card(game)
+  .col-md-4.mb-4
+    .card.h-100
+      .card-body
+        h2.card-title #{game.creator}
+        p.card-text max score: #{game.max_score}
+        p.card-text hold number: #{game.hold_num}
+        p.card-text number of dices: #{game.dice_num}
+        p.card-text max number of dice to roll in each turn: #{game.max_dice_roll}
+
+        p.card-text mean score: #{game.mean_score}
+        p.card-text online number: #{game.online_num}
+        p.card-text date: #{game.date}
+        p.card-text played: #{game.play_num}
+        if game.comments.length > 0
+          h4 comments:
+        each comment in game.comments
+          p.card-text #{comment}
+
+      .card-footer
+        a.btn.btn-primary(href='/game/'+game.id) play game
+
+mixin games(games)
+  each game in games
+    +game_card(game)
+
+mixin form_input(_title, _name, _required)
+  label(for= _name)
+    b= _title
+      input(type='text', placeholder= 'Enter '+ _title, name=_name, required= _required)
+
+mixin user_card(user)
+  .col-md-4.mb-4
+    .card.h-100
+      .card-body
+        h2.card-title #{user.username}
+        p.card-text score: #{user.mean_score}
+        p.card-text played: #{user.played_games_num}
+
+        if user.isOnline
+          p.card-text online
+        else
+          p.card-text offline
+      .card-footer
+        a.btn.btn-primary(href='/profile/'+ user.username) see profile
+
+mixin show_users(users)
+  each user in users
+    +user_card(user)
+
+mixin edit_profile_form_input(_name, _title, _value)
+  .form-group
+    .col-xs-6
+      label(for= _name)
+        h4= _title
+      input.form-control(type='text', name= _name, placeholder= _title, value= _value)
+
+
+mixin navbar(_title)
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+    .container
+      a.navbar-brand(href= '/home')= _title
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/profile') Profile
+          li.nav-item
+            a.nav-link(href='/all_games') Start Game
+          li.nav-item
+            a.nav-link(href='/create_game') Design Game
+          li.nav-item
+            a.nav-link(href='/all_users') User
+          li.nav-item
+            a.nav-link(href='/signout') Signout
